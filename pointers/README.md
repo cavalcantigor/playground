@@ -11,6 +11,7 @@ A collection of links on most diverse subjects.
 | Commit message| EN/PT    | [here](https://github.com/RomuloOliveira/commit-messages-guide)
 | Anti Patterns | EN       | [here](https://github.com/quantifiedcode/python-anti-patterns)
 | API Guidelines| EN       | [here](https://github.com/microsoft/api-guidelines)
+| Design Pattern| EN/PT    | [here](https://12factor.net/)
 
 #### Collections
 
@@ -19,7 +20,7 @@ A collection of links on most diverse subjects.
 | Software Enginering      | PT       | [here](https://github.com/gabiduarte/awesome-techleads/)
 
 
-#### Stuff
+#### Random Stuff
 
 | Subject                  | Language | Link |
 |------------------------- |--------- |-------
