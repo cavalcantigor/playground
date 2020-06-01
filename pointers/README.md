@@ -12,12 +12,15 @@ A collection of links on most diverse subjects.
 | Anti Patterns | EN       | [here](https://github.com/quantifiedcode/python-anti-patterns)
 | API Guidelines| EN       | [here](https://github.com/microsoft/api-guidelines)
 | Design Pattern| EN/PT    | [here](https://12factor.net/)
+| Google's Engineering Practices doc | EN | [here](https://github.com/google/eng-practices)
+| Google's Python Guide | EN | [here](https://google.github.io/styleguide/pyguide.html)
 
 #### Collections
 
 | Subject                  | Language | Link |
 |------------------------- |--------- |-------
 | Software Enginering      | PT       | [here](https://github.com/gabiduarte/awesome-techleads/)
+| Util links | PT/EN | [here](https://github.com/OfficialMarinho/Links-uteis/blob/master/LINKS.md)
 
 
 #### Random Stuff
