@@ -25,10 +25,12 @@ A collection of links on most diverse subjects.
 #### Courses
 | Course                   | Language | Link |
 |--------------------------|----------|-------
-| MongoDB beginner         | PT       | https://dani.academy/
-| Software Architecture    | PT       | https://desenvolvedor.io/
-| General Courses          | PT       | https://lumina.ufrgs.br/course/
-| React                    | PT       | https://www.aprendareact.com.br/cursos/iniciando-em-react
+| MongoDB beginner         | PT       | [here](https://dani.academy/)
+| Software Architecture    | PT       | [here](https://desenvolvedor.io/)
+| General Courses          | PT       | [here](https://lumina.ufrgs.br/course/)
+| React                    | PT       | [here](https://www.aprendareact.com.br/cursos/iniciando-em-react)
+| Pentest - Security       | PT       | [here](https://desecsecurity.com/curso/curso-pentest-gratuito)
+| Cloud Concepts           | PT       | [here](https://treinacloud.com.br/cloudcamp/quarentena/)
 
 
 #### Random Stuff
@@ -42,3 +44,4 @@ A collection of links on most diverse subjects.
 | Movies for hackers       | EN       | [here](https://github.com/k4m4/movies-for-hackers)
 | Useless (but funnie)     | EN       | [here](https://github.com/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee)
 | Developer Roadmap        | EN       | [here](https://github.com/kamranahmedse/developer-roadmap)
+| Backend Challenges       | PT/EN    | [here](https://github.com/CollabCodeTech/backend-challenges)
