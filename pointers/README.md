@@ -22,10 +22,13 @@ A collection of links on most diverse subjects.
 | Software Enginering      | PT       | [here](https://github.com/gabiduarte/awesome-techleads/)
 | Util links | PT/EN | [here](https://github.com/OfficialMarinho/Links-uteis/blob/master/LINKS.md)
 
-#### Courses and certificates
+#### Courses
 | Course                   | Language | Link |
 |--------------------------|----------|-------
 | MongoDB beginner         | PT       | https://dani.academy/
+| Software Architecture    | PT       | https://desenvolvedor.io/
+| General Courses          | PT       | https://lumina.ufrgs.br/course/
+| React                    | PT       | https://www.aprendareact.com.br/cursos/iniciando-em-react
 
 
 #### Random Stuff
