@@ -14,6 +14,7 @@ A collection of links on most diverse subjects.
 | Design Pattern| EN/PT    | [here](https://12factor.net/)
 | Google's Engineering Practices doc | EN | [here](https://github.com/google/eng-practices)
 | Google's Python Guide | EN | [here](https://google.github.io/styleguide/pyguide.html)
+| Algorithms            | EN | [here](https://livebook.manning.com/book/grokking-algorithms/chapter-1/)
 
 #### Collections
 
