@@ -12,16 +12,16 @@ Há diferenças entre o débito técnico prudente e aquele que é irresponsável
 |-------------------------|---------------------------|
 |  "Nós não temos tempo   |   "Nós devemos entregar   |
 |    para design"         |     agora e lidar com     |
-|                               as consequencias"     |
-|                                                     |
-| Deliberado                                          |
-+-----------------------------------------------------+
-| Inadvertido                                         |
-|                                                     |
-|  "O que é divisão em        "Agora nós sabemos como |
-|       camadas?"               nós deveríamos ter    |
-|                                      feito"         |
-|                                                     |
+|                         |     as consequencias"     |
+|                         |                           |
+| Deliberado              |                           |
++-------------------------+---------------------------+
+| Inadvertido             |                           |
+|                         |                           |
+|  "O que é divisão em    |   "Agora nós sabemos como |
+|       camadas?"         |     nós deveríamos ter    |
+|                         |            feito"         |
+|                         |                           |
 +-----------------------------------------------------+
 ```
 
