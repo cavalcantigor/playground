@@ -6,6 +6,7 @@ Para Fowler, a decisão de chamar uma escolha equivocada de débito técnico nã
 
 Há diferenças entre o débito técnico prudente e aquele que é irresponsável. Além disso, há também diferença entre o débito técnico deliberado e aquele que foi inadvertidamente percebido. Dessa maneira, é possível dividir débitos técnicos nos quadrantes: irresponsável/prudente e deliberado/inadvertido.
 
+```
 +-----------------------------------------------------+
 |       Irresponsável     |         Prudente          |
 |-------------------------|---------------------------|
@@ -22,7 +23,7 @@ Há diferenças entre o débito técnico prudente e aquele que é irresponsável
 |                                      feito"         |
 |                                                     |
 +-----------------------------------------------------+
-
+```
 
 ### References
 https://martinfowler.com/bliki/TechnicalDebtQuadrant.html
