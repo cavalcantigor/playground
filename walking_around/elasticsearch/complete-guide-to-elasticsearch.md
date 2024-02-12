@@ -2,7 +2,7 @@
 
 > Easy to use and very high scalable.
 
-### EKS
+### ELK
 
 - **Kibana**: an analytics and data visualization platform. Provides management and configuration to Elasticsearch.
 - **Logstash**: data processing pipeline. Consists of three parts - or stages: inputs, filters and outputs.
