@@ -30,3 +30,8 @@ Each shard is an Apache Lucene index. An ES index consists of one or more Lucene
 
 #### Replication
 
+> What happens if a node's hard drive fails? Hardware can fail at any time, so we need to handle that somehow.
+
+- **Replication**: ES suports replication for fault tolerance. It's supported natively and enabled by default. Replication is *extremly* easy with Elasticsearch.
+
+Replication is configured at index level. It works by creating copies of shards, referred to as replica shards. A shard that has been replicated is called a *primary shard*. A replica shard can serve search requests exactly like its primary shard. Replica shards are never stored on the same node as their primary shard.
