@@ -44,3 +44,116 @@ Replication is configured at index level. It works by creating copies of shards,
 - **Machine learning**: useful for running ML jobs.
 - **Coordination**: coordination refers to the distribution of queries and the aggregation of result.
 - **Voting-only**: rarely used. A node with this role will participate in the voting for a new master node, but cannot be elected as the master node itself.
+
+### Operations
+
+  - Create a document
+     ```
+     POST products/_doc
+     {
+       "name": "Coffee Maker",
+       "price": 64,
+       "in_stock": 10
+     }
+     ```
+  - Create a document with id
+     ```
+     POST products/_doc/100
+     {
+       "name": "Coffee Maker",
+       "price": 64,
+       "in_stock": 10
+     }
+     ```
+  - Update a document
+     ```
+     POST products/_update/100
+     {
+       "doc": {
+         "tags": ["electronics"]
+       }
+     }
+     ```
+  - Update a document with script
+     ```
+     POST products/_update/100
+     {
+       "script": {
+         "source": "ctx._source.in_stock--"
+       }
+     }
+     
+     POST products/_update/100
+     {
+       "script": {
+         "source": "ctx._source.in_stock = 10"
+       }
+     }
+     
+     POST products/_update/100
+     {
+       "script": {
+         "source": "ctx._source.in_stock -= params.quantity",
+         "params": {
+           "quantity": 4
+         }
+       }
+     }
+     ```
+  - Replace a document
+     ```
+     POST products/_doc/100
+     {
+       "name": "Coffee Maker",
+       "price": 64,
+       "in_stock": 10
+     }
+     ```
+  - Delete a document
+     ```
+     DELETE /products/_doc/100
+     ```
+
+### Routing
+
+How does ES know where to store documents? How are documents found once the have been indexed? The answer is *routing*.
+
+- **Routing**: is the process of resolving a shard for a document. It's possible to customize routing for various purposes. The default routing strategy ensures that documents are distributed evenly.
+
+```
+shard_num = hash(_routing) % num_primary_shards
+```
+> Because that formula the number of primary shards of an index cannot be changed at any time.
+
+### Reading data
+
+- A read request is received and handled by a *coordinating node*.
+- Routing is used to resolve the document's *replica group*.
+- ARS (adaptive replica selection) is used to send the query to the best available shard.
+- The coordinating node collects the response and sends it to the client.
+
+### Writing data
+
+- Write operations are sent to primary shards.
+- The primary shards forwards the operation to its replica shards.
+- Primary terms and sequence numbers are used to recover from failures.
+- Global and local checkpoints help to speed up the recovery process.
+- Primary terms and sequence numbers are available within responses.
+
+#### Primary terms
+- A way to distinguish between old and new primary shards.
+- Essentially a counter for how many times the primary shard has changed.
+- The primary term is appended to write operations.
+
+#### Sequence numbers
+- Appended to write operations together with the primary term.
+- Essentially a counter that is incremented for each write operation.
+- The primary shard increases the sequence number.
+- Enables ES to order write operations.
+
+#### Global and local checkpoints
+- Essentially sequence numbers.
+- Each replication group has a *global* checkpoint.
+- Each replica shard has a *local* checkpoint.
+- **Global checkpoints**: The sequence number that all active shards within a replication group have been aligned at least up to.
+- **Local checkpoints**: The sequence number for the last write operation that was performed.
