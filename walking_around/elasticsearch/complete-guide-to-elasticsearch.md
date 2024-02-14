@@ -157,3 +157,42 @@ shard_num = hash(_routing) % num_primary_shards
 - Each replica shard has a *local* checkpoint.
 - **Global checkpoints**: The sequence number that all active shards within a replication group have been aligned at least up to.
 - **Local checkpoints**: The sequence number for the last write operation that was performed.
+
+### Mapping and Analysis
+
+#### Analysis
+- Sometimes referred to as *text analysis*.
+- Applicable to text field/values.
+- Text values are analyzed when indexing documents.
+- The result is stored in data structures that are effcient for searching, etc.
+- The *_source* object is **not** used when searching for documents. It contains the exact values specified when indexing a document.
+
+#### Analyzer
+
+- **Character filters**
+  - Adds, removes, or changes characters.
+  - Analyzers contain zero or more characters filters.
+  - Character filters are applied in the order in which they are specified.
+  - Example (`html_strip` filter):
+    - **Input**: `"I&apos;m in a <em>good</em> mood&nbsp;-&nbsp;and I <strong>love</strong> açaí!"`
+    - **Output**: `"I'm in a good mood - and I love açaí!"`
+   
+- **Tokenizers**
+  - An analyzer contain **one** tokenizer.
+  - Tokenizes a string, i.e. splits it into tokens.
+  - Characters may be stripped as part of the tokenization.
+  - Example:
+    - **Input**: `"I REALLY like beer!"`
+    - **Output**: `["I", "REALLY", "like", "beer"]`
+   
+- **Token filters**
+  - Receive the output of tokenizers as input (i.e. the tokens).
+  - A token filter can add, remove or modify tokens.
+  - An analyzer contains zero or more token filters.
+  - Token filters are applied in the order which they are specified.
+  - Example (`lowercase` filter):
+    - **Input**: `["I", "REALLY", "like", "beer"]`
+    - **Output**: `["i", "really", "like", "beer"]`
+   
+#### Standard analyzer
+<img width="995" alt="image" src="https://github.com/cavalcantigor/playground/assets/8291170/72faa478-9226-4fb9-b8de-728a83ec7cb2">
