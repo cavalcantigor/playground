@@ -196,3 +196,18 @@ shard_num = hash(_routing) % num_primary_shards
    
 #### Standard analyzer
 <img width="995" alt="image" src="https://github.com/cavalcantigor/playground/assets/8291170/72faa478-9226-4fb9-b8de-728a83ec7cb2">
+
+
+### Inverted index
+
+> A field's values are stored in one of several data structures. The data structure depends on the field's data type. The data structure ensures efficient data access - e.g searches. These data structures are handled by Apache Lucene, not ES.
+
+- Mapping between terms and which documents contain them.
+- The "token" terminology is used  on the analyzer contexto. Outside the context of analyzers, we use the terminology "terms".
+- Terms are sorted alphabetically.
+- Inverted indices contain more than just terms and document IDs.
+  - E.g. information for relevance scoring.
+- One inverted index per text field.
+- Other data types use BKD trees, for instance.
+
+<img width="917" alt="image" src="https://github.com/cavalcantigor/playground/assets/8291170/7eacc873-6f18-484a-af75-d00a9f1aabea">
