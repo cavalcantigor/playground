@@ -198,7 +198,7 @@ shard_num = hash(_routing) % num_primary_shards
 <img width="995" alt="image" src="https://github.com/cavalcantigor/playground/assets/8291170/72faa478-9226-4fb9-b8de-728a83ec7cb2">
 
 
-### Inverted index
+#### Inverted index
 
 > A field's values are stored in one of several data structures. The data structure depends on the field's data type. The data structure ensures efficient data access - e.g searches. These data structures are handled by Apache Lucene, not ES.
 
@@ -211,3 +211,29 @@ shard_num = hash(_routing) % num_primary_shards
 - Other data types use BKD trees, for instance.
 
 <img width="917" alt="image" src="https://github.com/cavalcantigor/playground/assets/8291170/7eacc873-6f18-484a-af75-d00a9f1aabea">
+
+#### Mapping
+
+- Defines the structure of documents. Also used to configure how values are indexed.
+- Similar to table's schema in a relational database.
+- Explicit mapping: we define mapping ourselves.
+- Dynamic mapping: ES generates field mapping for us.
+- Explicit and dynamic mapping can be combined.
+
+##### Data types
+
+- **Object**
+  - Used for any JSON `object`.
+  - Objects may be nested.
+  - Mapped using the `properties` parameter.
+  - Objects are **not** stored as objects in Apache Lucene. They are transformed to ensure that we can index any valid JSON.
+- **Nested**
+  - Similar to `object` data type, by maintains object relationship. Useful when indexing array of objects.
+  - Enables us to query objects independently. Must use the `nested` query.
+  - `nested` objects are stored as hidden documents.
+- **Keyword**
+  - Used for exact matching of values.
+  - Typically used for filtering, aggregations and sorting.
+  - E.g. searching for articles with a status of `PUBLISHED`.
+  - For full-text searchs, use the `text` data type instead. E.g. searching the body of an article.
+- **And more...**
