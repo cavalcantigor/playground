@@ -220,7 +220,7 @@ shard_num = hash(_routing) % num_primary_shards
 - Dynamic mapping: ES generates field mapping for us.
 - Explicit and dynamic mapping can be combined.
 
-##### Data types
+#### Data types
 
 - **Object**
   - Used for any JSON `object`.
@@ -237,3 +237,17 @@ shard_num = hash(_routing) % num_primary_shards
   - E.g. searching for articles with a status of `PUBLISHED`.
   - For full-text searchs, use the `text` data type instead. E.g. searching the body of an article.
 - **And more...**
+
+#### Type coercion
+
+- Data types are inspected when indexing documents. They are validated and some invalid values are rejected. E.g.trying to index an object for a `text` field.
+- Sometimes, providing the wrong data type is okay.
+- Understanding the `_source` object:
+  - Contains the values that were supplied at index time, not the values that are *indexed*.
+  - Search queries use indexed values, not `_source`.
+  - `_source` does not reflect how values are indexed.
+    - Keep coercion in mind if you use values from `_source`.
+- Supplying a float point for an `integer` field will truncate it to an integer.
+- Coercion is **not** used for dynamic mapping.
+- Always try to use the correct data type, specially the first time you index a field.
+- Disabling coercion is a matter of preference. It's enabled by default.
